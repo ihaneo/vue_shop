@@ -1,6 +1,6 @@
 <template>
 <div >
-  <h3>你好汪博涵</h3>
+  <h3>欢迎页</h3>
 </div>
 </template>
 <script>
