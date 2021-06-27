@@ -11,8 +11,8 @@
       <!-- 搜索和添加区域 -->
       <el-row :gutter="12">
         <el-col :span="10">
-          <el-input placeholder="请输入内容">
-            <el-button slot="append" icon="el-icon-search" v-model='queryInfo.query' clearable @click="getUserList" @clear='getUserList'></el-button>
+          <el-input placeholder="请输入内容" v-model='queryInfo.query' clearable @clear='getUserList'>
+            <el-button slot="append" icon="el-icon-search" @click="getUserList"></el-button>
           </el-input>
         </el-col>
         <el-col :span="6">
@@ -101,21 +101,21 @@
         </span>
       </el-dialog>
       <!-- 分页区 -->
-      <el-pagination>
-        <!-- 每页显示多少条的下拉菜单监听 -->
+      <el-pagination
         @size-change="handleSizeChange"
-         <!-- 页码值切换监听-->
         @current-change="handleCurrentChange"
-         <!-- 当前显示的第几页的数据 -->
         :current-page="queryInfo.pagenum"
-         <!-- 每页下拉项显示的数量 -->
-        :page-sizes="[4, 2, 3, 4]"
-         <!-- 当前每页显示多少条数据 -->
+        :page-sizes="[2, 3, 4, 5]"
         :page-size="queryInfo.pagesize"
-         <!-- 指定页面显示哪些布局结构 -->
         layout="total, sizes, prev, pager, next, jumper"
-         <!-- 共展示多少的数据量 -->
         :total="total">
+        <!-- 每页显示多少条的下拉菜单监听 -->
+        <!-- 页码值切换监听-->
+        <!-- 当前显示的第几页的数据 -->
+        <!-- 每页下拉项显示的数量 -->
+        <!-- 当前每页显示多少条数据 -->
+        <!-- 指定页面显示哪些布局结构 -->
+        <!-- 共展示多少的数据量 -->
       </el-pagination>
     </el-card>
   </div>
